@@ -1,0 +1,72 @@
+body {
+    margin:0;
+    padding:0;
+    background: silver;
+}
+
+.button-area {
+    width:400px;
+    margin:300px auto 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.button {
+    position: relative;
+    letter-spacing: 4px;
+    margin:0 auto;
+    padding:16px 40px;
+    font-size: 28px;
+    color:green;
+
+}
+
+
+a {
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.button::after,
+.button::before {
+    position: absolute;
+    content:"";
+    width:30%;
+    height:40%;
+    transform:skewY(30deg);
+    transition: all 0.6s cubic-bezier(0.65, -0.50, 0.260, 1.50);
+    z-index: -2;
+
+}
+
+.button::before {
+    background:greenyellow;
+    top:-2px;
+    left:52px;
+}
+
+
+.button::after {
+    background:orange;
+    top:45px;
+    left:138px;
+
+}
+
+.button:hover::before,
+.button:hover::after {
+    top:0;
+    transform: skewY(30deg);
+}
+
+.button:hover::before {
+    background:greenyellow;
+    top:45px;
+    left:138px;
+}
+
+.button:hover::after {
+    background: orange;
+    top:-1px;
+    left:52px;
+}
